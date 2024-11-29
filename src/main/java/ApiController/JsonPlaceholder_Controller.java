@@ -16,9 +16,10 @@ public class JsonPlaceholder_Controller {
                 .spec(basePosts)
                 .when().get(Endpoint);
     }
-    public static Response GetSinglePostByID(String Endpoint, String ID){
-        return   given()
+
+    public static Response GetSinglePostByID(String Endpoint, String ID) {
+        return given()
                 .spec(basePosts)
-                .when().get(Endpoint+ID);
+                .when().get(Endpoint + ID);
     }
 }

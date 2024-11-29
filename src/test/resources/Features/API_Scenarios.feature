@@ -1,5 +1,6 @@
 @ApiTests
 Feature: Test Scenarios for Json Placeholder APIs
+
   Background:
     Given Authenticate to Api Service
 
