@@ -24,20 +24,38 @@ This section should list any major dependencies/libraries used to bootstrap this
 
 Before running the automation script for the https://example.com/ using Selenium, ensure the following prerequisites are met:
 1. **Java 17 Development Kit (JDK):**
-    - Ensure JDK is installed on your system. You can download it from the [Java SE Downloads page](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html).
-2. **Development Environment - IntelliJ IDEA:**
-    - Download and install IntelliJ IDEA from [jetbrains.com/idea/](https://www.jetbrains.com/idea/).
+    - Ensure JDK 17 is installed on your system.
+    - You can download it from the official [Java SE Downloads](https://www.oracle.com/java/technologies/downloads). page.
+    -  Verify the installation by running the following command in your terminal:
+      //bash "java -version"
+   
+
+2. **Development Environment - Aqua IDE:**
+    - Download and install Aqua IDE (JetBrains' IDE designed for test automation and QA professionals).
+    - You can get it from the official website: [Aqua IDE](https://www.jetbrains.com/aqua/).
+    - Ensure Aqua is configured properly with the required plugins for Selenium and testing frameworks like Cucumber.
+
+
+3. **Allure Report Setup:**
+   - Download the latest Allure CLI release from the [Allure GitHub repository](https://github.com/allure-framework/allure2).
+   - Extract the downloaded zip file.
+   - Add the bin folder to your system's PATH environment variable.
+   - Verify Installation: Run the following command to confirm Allure is installed: "allure --version".
+   - Generate and Serve Allure Reports: "allure serve allure-results"
+
+
 
 ## Installation and Run
+**GitHub:**
+- Install Git on your system by downloading it from the [Git Website](https://git-scm.com/downloads).
 
-Below is an example of how you can install and set up the project.
 
 1. Clone the repo
    ```sh
    git clone https://github.com/ahmedgamalQA/Example.com.git
    ```
 
-3. Run the scenarios By add tag in class found at `src/test/java/Runners/TestRunnerClass.java`:
+2. Run the scenarios By add tag in class found at `src/test/java/Runners/TestRunnerClass.java`:
  Tag "@ExampleDomain_WebTests" for run webTest
  or Tag "@ApiTests" for run ApiTests
 

@@ -1,6 +1,5 @@
 package StepDefinitions;
 
-import Listeners.ListenerImplementor;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -52,14 +51,14 @@ public class Hooks {
         return driver;
     }
 
-//    @Before
-//    public void openUrl() {
-//        // Specify the browser type here: "chrome", "firefox", or "edge"
-//        driver = getDriver("edge");
-//        driver.manage().window().maximize();
-//        driver.get(URL);
-//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-//    }
+    @Before
+    public void openUrl() {
+        // Specify the browser type here: "chrome", "firefox", or "edge"
+        driver = getDriver("edge");
+        driver.manage().window().maximize();
+        driver.get(URL);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+    }
 
     @After
     public void tearDown(Scenario scenario) {

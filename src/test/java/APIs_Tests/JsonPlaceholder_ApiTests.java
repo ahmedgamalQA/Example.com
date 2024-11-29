@@ -1,11 +1,10 @@
-package StepDefinitions;
+package APIs_Tests;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
-import org.hamcrest.Matchers;
 
 import static ApiController.JsonPlaceholder_Controller.GetSinglePostByID;
 import static org.hamcrest.Matchers.*;
@@ -61,7 +60,7 @@ public class JsonPlaceholder_ApiTests {
 
     @When("Get Single Post by endpoint is {string} and ID is {string}")
     public void getSinglePostByEndpointIsAndIDIs(String Endpoint, String ID) {
-        response = GetSinglePostByID (Endpoint,ID);
+        response = GetSinglePostByID(Endpoint, ID);
         response.then().log().body();  // Log the response body
 
     }

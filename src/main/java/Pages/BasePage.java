@@ -30,15 +30,18 @@ public class BasePage {
         this.js = (JavascriptExecutor) driver;
         this.actions = new Actions(driver);
     }
+
     protected BasePage ScrollToElement(By by) {
         WebElement element = driver.findElement(by);
         js.executeScript("arguments[0].scrollIntoView({block: 'center'})", element);
         return this;
     }
-    protected BasePage waitForElementToDisappear(By by){
+
+    protected BasePage waitForElementToDisappear(By by) {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
         return this;
     }
+
     protected BasePage WaitForElement(By by) {
         ScrollToElement(by);
         fluentWait.until(ExpectedConditions.and(
@@ -48,6 +51,7 @@ public class BasePage {
         ));
         return this;
     }
+
     protected WebElement findElement(By by) {
         int attempts = 0;
         WebElement element = null;
@@ -77,19 +81,21 @@ public class BasePage {
         return null; // or throw an exception, return a default value, or handle it according to your needs
     }
 
-    protected BasePage Click(By by){
+    protected BasePage Click(By by) {
         WaitForElement(by);
         WebElement element = findElement(by);
         element.click();
         return this;
     }
+
     protected BasePage sendKeys(String string, By by) {
         WaitForElement(by);
         WebElement element = findElement(by);
         element.sendKeys(string);
         return this;
     }
-    protected String getText(By by){
+
+    protected String getText(By by) {
         WaitForElement(by);
         return driver.findElement(by).getText();
     }

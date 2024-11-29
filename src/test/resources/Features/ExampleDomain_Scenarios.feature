@@ -1,5 +1,6 @@
 @SmokeTests @ExampleDomain_WebTests
 Feature: Test Scenarios for Example Domain website
+
   Background:
     Given User Navigate to URL
 

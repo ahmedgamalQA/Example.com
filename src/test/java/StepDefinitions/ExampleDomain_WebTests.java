@@ -6,7 +6,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
 import static StepDefinitions.Hooks.driver;
+
 import Pages.ExamplePage;
 import org.testng.asserts.SoftAssert;
 
@@ -14,8 +16,8 @@ public class ExampleDomain_WebTests {
     String ActualFirstPageTitle;
     String ActualCurrentURL;
     ExamplePage examplepage = new ExamplePage(driver);
-    IanaPage ianaPage =new IanaPage(driver);
-    TermsPage termsPage =new TermsPage(driver);
+    IanaPage ianaPage = new IanaPage(driver);
+    TermsPage termsPage = new TermsPage(driver);
     SoftAssert soft = new SoftAssert();
 
     @Given("User Navigate to URL")
@@ -38,7 +40,7 @@ public class ExampleDomain_WebTests {
     @And("Verify the Current URL is {string}")
     public void verifyTheCurrentURLIs(String ExpectedCurrentURL) {
         soft.assertTrue(ActualCurrentURL.equals(ExpectedCurrentURL));
-        System.out.println("The Actual Result of TC 1 is: "+ActualCurrentURL);
+        System.out.println("The Actual Result of TC 1 is: " + ActualCurrentURL);
         soft.assertAll();
     }
 
@@ -49,17 +51,17 @@ public class ExampleDomain_WebTests {
 
     @Then("Verify the browser is redirected to {string}")
     public void verifyTheBrowserIsRedirectedTo(String ExpectedAssertionToURL) {
-        String  ActualAssertionToURL = ianaPage.GetCurrentURL();
+        String ActualAssertionToURL = ianaPage.GetCurrentURL();
         soft.assertTrue(ActualAssertionToURL.equals(ExpectedAssertionToURL));
-        System.out.println("The Actual Result of TC 2 is: "+ActualAssertionToURL);
+        System.out.println("The Actual Result of TC 2 is: " + ActualAssertionToURL);
         soft.assertAll();
     }
 
     @Then("Assert that the title of the Page is {string}")
     public void assertThatTheTitleOfThePageIs(String ExpectedTitleOfTermsPage) {
-        String  ActualTitleOfTermsPage = termsPage.GetPageTitle();
+        String ActualTitleOfTermsPage = termsPage.GetPageTitle();
         soft.assertTrue(ActualTitleOfTermsPage.equals(ExpectedTitleOfTermsPage));
-        System.out.println("The Actual Result of TC 3 is: "+ActualTitleOfTermsPage);
+        System.out.println("The Actual Result of TC 3 is: " + ActualTitleOfTermsPage);
         soft.assertAll();
     }
 }
